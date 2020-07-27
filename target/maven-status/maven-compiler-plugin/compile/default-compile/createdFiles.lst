@@ -1,2 +1,2 @@
-lt\vytautas\writter\GreetingController.class
-lt\vytautas\writter\ServingWebContentApplication.class
+lt\vytautas\writter\controllers\Greeting.class
+lt\vytautas\writter\Application.class
