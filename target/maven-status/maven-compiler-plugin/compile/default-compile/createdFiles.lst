@@ -1,2 +1,4 @@
+lt\vytautas\writter\domain\Message.class
 lt\vytautas\writter\controllers\Greeting.class
 lt\vytautas\writter\Application.class
+lt\vytautas\writter\repos\MessageRepo.class
