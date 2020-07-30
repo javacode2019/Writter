@@ -12,8 +12,6 @@ import java.util.Map;
 
 @Controller
 public class Greeting {
-    @Autowired
-    private MessageRepo messageRepo;
 
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="Spring boot") String name,
@@ -21,32 +19,8 @@ public class Greeting {
         model.put("name", name);
         return "greeting";
     }
-    @GetMapping
-    public  String main(Map<String, Object> model){
-        Iterable<Message> messages= messageRepo.findAll();
-        model.put("messages",messages);
-        return "main";
-    }
-    @PostMapping
-    public String add (@RequestParam String text, @RequestParam String tag, Map<String,Object> model){
-        Message message = new Message(text,tag);
-        messageRepo.save(message);
-        Iterable<Message> messages= messageRepo.findAll();
-        model.put("messages",messages);
-        return "main";
-    }
-    @PostMapping("filterByTag")
-    public String filterByTag (@RequestParam String filterByTag, Map<String,Object> model){
-        Iterable<Message> messages;
-        if( filterByTag!=null && !filterByTag.isEmpty()){
-            messages= messageRepo.findByTag(filterByTag);
-        }else{
-            messages= messageRepo.findAll();
-        }
 
-        model.put("messages",messages);
-        return "main";
-    }
+
 
 
 }
