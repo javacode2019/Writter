@@ -35,5 +35,18 @@ public class Greeting {
         model.put("messages",messages);
         return "main";
     }
+    @PostMapping("filterByTag")
+    public String filterByTag (@RequestParam String filterByTag, Map<String,Object> model){
+        Iterable<Message> messages;
+        if( filterByTag!=null && !filterByTag.isEmpty()){
+            messages= messageRepo.findByTag(filterByTag);
+        }else{
+            messages= messageRepo.findAll();
+        }
+
+        model.put("messages",messages);
+        return "main";
+    }
+
 
 }
