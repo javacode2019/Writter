@@ -1,15 +1,16 @@
-package lt.vytautas.writter.controllers;
+package lt.vytautas.writter.controller;
 
 import lt.vytautas.writter.domain.Message;
 import lt.vytautas.writter.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class FilterByTag {
+public class FilterByTagController {
     @Autowired
     private MessageRepo messageRepo;
 
@@ -21,6 +22,12 @@ public class FilterByTag {
         }else{
             messages= messageRepo.findAll();
         }
+        model.put("messages",messages);
+        return "filterByTag";
+    }
+    @GetMapping("/filterByTag")
+    public  String showFilter(Map<String, Object> model){
+        Iterable<Message> messages= messageRepo.findAll();
         model.put("messages",messages);
         return "filterByTag";
     }

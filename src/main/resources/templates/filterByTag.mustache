@@ -1,10 +1,12 @@
 <html>
 
 <body>
-
+<a href="/main">Main page</a>
+<br>
 <div>Find message by tag:</div>
 <form method="post" action="filterByTag">
     <input type="text" name="filterByTag">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
     <button type="submit">Find</button>
 </form>
 <div>List of message:</div>
@@ -15,5 +17,6 @@
         <i>{{tag}}</i>
     </div>
 {{/messages}}
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-package lt.vytautas.writter.controllers;
+package lt.vytautas.writter.controller;
 
 import lt.vytautas.writter.domain.Message;
 import lt.vytautas.writter.repos.MessageRepo;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class Main {
+public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
-    @GetMapping
+    @GetMapping("/main")
     public  String main(Map<String, Object> model){
         Iterable<Message> messages= messageRepo.findAll();
         model.put("messages",messages);
         return "main";
     }
-    @PostMapping
+    @PostMapping("/main")
     public String add (@RequestParam String text, @RequestParam String tag, Map<String,Object> model){
         Message message = new Message(text,tag);
         messageRepo.save(message);
