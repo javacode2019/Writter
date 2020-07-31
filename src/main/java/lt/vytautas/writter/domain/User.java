@@ -17,8 +17,6 @@ public class User implements UserDetails {
     private String password;
     private boolean active;
 
-
-
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
@@ -73,7 +71,7 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    private boolean isActive() {
+    public boolean isActive() {
         return active;
     }
 
@@ -81,7 +79,7 @@ public class User implements UserDetails {
         this.active = active;
     }
 
-    private Set<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
