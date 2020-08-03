@@ -4,26 +4,22 @@
 <@c.page>
     <div>
         <@l.logout />
+        <span><a href="/user">User list</a></span>
     </div>
     <div>
         <form method="post">
-            <label>
-                <input type="text" name="text" placeholder="Enter message" />
-            </label>
-            <label>
-                <input type="text" name="tag" placeholder="Tag">
-            </label>
-            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                <input type="text" name="text" placeholder="Enter message">
+                <input type="text" name="tag" placeholder="Enter tag">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit">Add</button>
         </form>
     </div>
-    <div>List of messages</div>
+
     <form method="get" action="/main">
-        <label>
-            <input type="text" name="filter" value="${filter} "/>
-        </label>
+        <input type="text" name="filter"  placeholder="Enter filter by tag" >
         <button type="submit">Find</button>
     </form>
+    <div>List of messages:</div>
     <#list messages as message>
         <div>
             <b>${message.id}</b>
