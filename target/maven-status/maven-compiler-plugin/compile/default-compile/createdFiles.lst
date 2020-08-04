@@ -1,4 +1,12 @@
 lt\vytautas\writter\domain\Message.class
-lt\vytautas\writter\controllers\Greeting.class
-lt\vytautas\writter\Application.class
+lt\vytautas\writter\config\MvcConfig.class
+lt\vytautas\writter\controller\RegistrationController.class
+lt\vytautas\writter\service\UserService.class
 lt\vytautas\writter\repos\MessageRepo.class
+lt\vytautas\writter\repos\UserRepo.class
+lt\vytautas\writter\domain\Role.class
+lt\vytautas\writter\config\WebSecurityConfig.class
+lt\vytautas\writter\controller\MainController.class
+lt\vytautas\writter\Application.class
+lt\vytautas\writter\domain\User.class
+lt\vytautas\writter\controller\UserController.class
