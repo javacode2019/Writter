@@ -16,7 +16,7 @@
     </div>
 
     <form method="get" action="/main">
-        <input type="text" name="filter"  placeholder="Enter filter by tag" >
+        <input type="text" name="filter"  placeholder="Enter filter by tag" value="${filter?ifExists}" >
         <button type="submit">Find</button>
     </form>
     <div>List of messages:</div>
@@ -28,6 +28,6 @@
             <strong>${message.authorName}</strong>
         </div>
     <#else>
-        No message
+        No message by this tag!
     </#list>
 </@c.page>
