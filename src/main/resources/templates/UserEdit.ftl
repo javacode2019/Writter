@@ -1,9 +1,6 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    <div>
-        <span><a href="/main">main page</a></span>
-    </div>
     User editor
 
     <form action="/user" method="post">
